@@ -1,0 +1,15 @@
+class Solution:
+    def isPalindrome(self, x):
+        # Negative numbers are never palindrome
+        if x < 0:
+            return False
+        
+        original = x
+        rev = 0
+        
+        while x != 0:
+            digit = x % 10
+            x //= 10
+            rev = rev * 10 + digit
+        
+        return rev == original
